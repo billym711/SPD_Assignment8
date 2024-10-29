@@ -127,5 +127,31 @@ def add():
         # How could it have not been a GET or POST? I have no idea how that could have happened.
         return render_template('add.html',message='Something went wrong.')
 
+@app.route("/edit", methods=["GET","POST"])
+def edit():
+    if request.method == "GET":  # When you first visit the page
+
+        # B1) Run a CLASS method called getAllMovies().  Instaniation is not needed.
+        mList=Movie.getAllMovies()
+        return render_template('edit.html',message=mList)
+
+    elif request.method == "POST": # When you fill out the form and click SUBMIT
+        # Get the value from the form object called "movtitle" (it is a textbox)
+        Title = request.form["name"]
+
+        # B1) Run a CLASS method called getAllMovies().  Instaniation is not needed.
+        mList=Movie.getAllMovies()
+        Movie.index(Title)
+
+        # B1) Run a CLASS method called getAllMovies().  Instaniation is not needed.
+        mList=Movie.getAllMovies()
+
+        #Return the template index.html but pass it the list of movies
+        # stored in the variable mList
+        return render_template('edit.html',message=mList )
+
+    else:
+        return render_template('edit.html')
+
 
 app.run(debug=True)

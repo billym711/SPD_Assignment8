@@ -40,7 +40,8 @@
                 <TD style="padding: 5px; border: solid 1px #777;">{{m.Title}}</TD>
                 <TD style="padding: 5px; border: solid 1px #777;">{{m.Year}}/{{m.Image}}
                 </TD>
-                <TD style="padding: 5px; border: solid 1px #777;"><button>Edit</button>
+                <TD style="padding: 5px; border: solid 1px #777;"><form action="/edit" method="post"><input type="hidden" name= "Title" value = {{m.Title}}>
+                    <button type= "submit" > Edit</button></form>
                 </TD>
                 <TD style="padding: 5px; border: solid 1px #777;"><form action="/index" method="post"><input type="hidden" name= "Title" value = {{m.Title}}>
                 <button type= "submit" > Delete</button></form>

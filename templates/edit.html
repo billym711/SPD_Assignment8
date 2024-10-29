@@ -9,10 +9,13 @@
 
 {% block body %}
 
-    <form action="/delete" method="post">
+    <form action="/edit" method="post">
         <br>
-
-        <!-- Add a Submit button-->
+        <input autocomplete="off" autofocus name="movtitle" placeholder="Name" type="text"><br>
+        <!-- Name this TEXTBOX "movyear"-->
+        <input autocomplete="off" autofocus name="movyear" placeholder="Birth Month" type="text"><br>
+        <!-- Name this TEXTBOX "ImageName"-->
+        <input autocomplete="off" autofocus name="ImageName" placeholder="Birth Day" type="text"><br>
         <input type="submit">
         <!-- END Specific to Movie DELETE -->
 
