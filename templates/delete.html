@@ -1,30 +1,26 @@
-<!-- CREATE CHILD TEMPLATE FOR "ADD" PAGE (aka Insert Record Page) -->
+<!-- CREATE CHILD TEMPLATE FOR "DELETE" PAGE (aka Delete Record Page) -->
 <!-- Inherit the Parent page first -->
 {% extends "layout.html" %}
 
 <!-- Replace the "placeholder" called head in the parent template with the following -->
 {% block head %}
-    <title>Insert Record Page</title>
+    <title>Delete Record Page</title>
 {% endblock %}
 
-
-<!-- Replace the "placeholder" called body in the parent template with the following -->
 {% block body %}
-    <form action="/add" method="post">
-        <!-- START Specific to Movie Add -->
-        Add a Movie?<br>
+
+    <form action="/delete" method="post">
+        <!-- START Specific to Movie DELETE -->
+        Delete which movie?
+
         <!-- Name this TEXTBOX "movname"-->
-        <input autocomplete="off" autofocus name="movtitle" placeholder="Movie Title" type="text"><br>
-        <!-- Name this TEXTBOX "movyear"-->
-        <input autocomplete="off" autofocus name="movyear" placeholder="Movie Release Year" type="number"><br>
-        <!-- Name this TEXTBOX "ImageName"-->
-        <input autocomplete="off" autofocus name="ImageName" placeholder="Image Name" type="text"><br>
+        <input autocomplete="off" autofocus name="movtitle" placeholder="Movie Title" type="text">
+        <br>
+
         <!-- Add a Submit button-->
         <input type="submit">
-        <h2>Don't forget to upload the image to the Images folder!</h2>
-        <br>
-        <br>
-        <!-- END Specific to Movie Add -->
+        <!-- END Specific to Movie DELETE -->
+
 
         <H2><u>Ordered List of Movies</u></H2>
         <OL>

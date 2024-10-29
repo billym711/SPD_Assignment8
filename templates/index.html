@@ -1,43 +1,65 @@
-{% extends "base.html" %}
+<!-- !!!!!!!!!!!!!!!!! ANYTHING IN HTML QUOTES CAN BE SEEN THROUGH THE WEB BROWSER !!!!!!!!!!!!!!!!!!!!!-->
+<!-- Right mouse click on your web page in your web browser and select "View (page) Source"  -->
 
-{% block title %}About Page{% endblock %}
+<!-- CREATE CHILD TEMPLATE FOR "INDEX" PAGE (aka Home Page) -->
+<!-- Inherit the Parent page first -->
+{% extends "layout.html" %}
 
-{% block content %}
-<!DOCTYPE html>
+<!-- Replace the "placeholder" called head in the parent template with the following -->
 
-<html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-        <link href="/static/styles.css" rel="stylesheet">
-        <title>Birthdays</title>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Birthdays</h1>
-        </div>
-        <div class="container">
-            <div class="section">
-
-               
-                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-            </div>
-
-            <div class="section">
-
-                <h2>All Birthdays</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Birthday</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- TODO: Loop through the database entries to display them in this table -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </body>
-</html>
+<!-- BEGIN head BLOCK -->
+{% block head %}
+    <title>Index Page</title>
 {% endblock %}
+<!-- BEGIN head BLOCK -->
+
+<!-- Replace the "placeholder" called body in the parent template with the following -->
+<!-- BEGIN BODY BLOCK -->
+{% block body %}
+
+<!-- Add text that will be static for the INDEX page-->
+<h1>Welcome to the Movie Web Application!!!</h1>
+
+<p>
+    You can view, insert and delete movies using this application.
+</p>
+    <!-- A TABLE VERSION INSTEAD OF A ORDERED LIST VERSION -->
+    <!-- REDUNDENT BUT I WANTE TO SHOW HOW TO FORMAT THE RESULTS DIFFERENTLY -->
+    <H2><u>Table List of Movies (an excuse to use more Jinja</u></H2>
+    <TABLE style="border-collapse: collapse;">
+        <TR style="background-color: #D6EEEE;">
+            <TH style="padding: 5px; border: solid 1px #777;">Movie Title</TD>
+            <TH style="padding: 5px; border: solid 1px #777;">Date Release</TD>
+            <TH style="padding: 5px; border: solid 1px #777;">Cover</TD>
+       </TH>
+       <!-- EXAMPLES OF THE JINJA LANGUAGE FOR LOOPS-->
+        {% for m in message %}
+            <TR>
+                <TD style="padding: 5px; border: solid 1px #777;">{{m.Title}}</TD>
+                <TD style="padding: 5px; border: solid 1px #777;">{{m.Year}}</TD>
+                <TD style="padding: 5px; border: solid 1px #777;">
+                    <img src="static/images/{{m.Image}}" />
+                </TD>
+            </TR>
+        {% endfor %}
+
+
+        {# ANYTHING IN JINJA COMMENTS CANNOT BE SEEN BY THE WEB BROWSER #}
+
+        {# note: EXAMPLE JINJA COMMENT
+
+            You cannot use HTML comment tags to comment out JINJA. You must use Jinja comments
+            The next line of code will not be run and it will NOT be visible from the web browser.
+            JINJA CODE THAT WILL NEVER RUN
+            {% for user in users %}
+                ...
+            {% endfor %}
+
+            #}
+
+
+    </TABLE>
+
+<!-- END BODY BLOCK -->
+{% endblock %}
+
