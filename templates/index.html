@@ -25,20 +25,17 @@
 </p>
     <!-- A TABLE VERSION INSTEAD OF A ORDERED LIST VERSION -->
     <!-- REDUNDENT BUT I WANTE TO SHOW HOW TO FORMAT THE RESULTS DIFFERENTLY -->
-    <H2><u>Table List of Movies (an excuse to use more Jinja</u></H2>
+    <H2><u>Birthdays</u></H2>
     <TABLE style="border-collapse: collapse;">
         <TR style="background-color: #D6EEEE;">
-            <TH style="padding: 5px; border: solid 1px #777;">Movie Title</TD>
-            <TH style="padding: 5px; border: solid 1px #777;">Date Release</TD>
-            <TH style="padding: 5px; border: solid 1px #777;">Cover</TD>
+            <TH style="padding: 5px; border: solid 1px #777;">Name</TD>
+            <TH style="padding: 5px; border: solid 1px #777;">Birthday</TD>
        </TH>
        <!-- EXAMPLES OF THE JINJA LANGUAGE FOR LOOPS-->
         {% for m in message %}
             <TR>
                 <TD style="padding: 5px; border: solid 1px #777;">{{m.Title}}</TD>
-                <TD style="padding: 5px; border: solid 1px #777;">{{m.Year}}</TD>
-                <TD style="padding: 5px; border: solid 1px #777;">
-                    <img src="static/images/{{m.Image}}" />
+                <TD style="padding: 5px; border: solid 1px #777;">{{m.Year}}/{{m.Image}}
                 </TD>
             </TR>
         {% endfor %}
