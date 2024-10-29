@@ -1,0 +1,27 @@
+
+<!-- CREATE CHILD TEMPLATE FOR "ADD" PAGE (aka Insert Record Page) -->
+<!-- Inherit the Parent page first -->
+{% extends "base.html" %}
+
+<!-- Replace the "placeholder" called head in the parent template with the following -->
+{% block title %}
+    <title>Insert Record Page</title>
+{% endblock %}
+
+
+<!-- Replace the "placeholder" called body in the parent template with the following -->
+{% block content %}
+    <form action="/add" method="post">
+        Add a Birthday?<br>
+        <input autocomplete="off" autofocus name="id" placeholder="ID" type="text"><br>
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text"><br>
+        <input autocomplete="off" autofocus name="bmonth" placeholder="Birth Month" type="text"><br>
+        <input autocomplete="off" autofocus name="bday" placeholder="Birth Day" type="text"><br>
+        <!-- Add a Submit button-->
+        <input type="submit">
+        <br>
+        <br>
+
+    </form>
+
+ {% endblock %}
