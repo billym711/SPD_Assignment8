@@ -30,12 +30,19 @@
         <TR style="background-color: #D6EEEE;">
             <TH style="padding: 5px; border: solid 1px #777;">Name</TD>
             <TH style="padding: 5px; border: solid 1px #777;">Birthday</TD>
+            <TH style="padding: 5px; border: solid 1px #777;">Edit</TD>
+            <TH style="padding: 5px; border: solid 1px #777;">Delete</TD>
+
        </TH>
        <!-- EXAMPLES OF THE JINJA LANGUAGE FOR LOOPS-->
         {% for m in message %}
             <TR>
                 <TD style="padding: 5px; border: solid 1px #777;">{{m.Title}}</TD>
                 <TD style="padding: 5px; border: solid 1px #777;">{{m.Year}}/{{m.Image}}
+                </TD>
+                <TD style="padding: 5px; border: solid 1px #777;"><button>Edit</button>
+                </TD>
+                <TD style="padding: 5px; border: solid 1px #777;"><form action="/delete" method="post"><input type="submit"></form>
                 </TD>
             </TR>
         {% endfor %}
