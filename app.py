@@ -56,7 +56,7 @@ def index():
 # Allowable Actions:
 #   GET:  This is when you first come to the page
 #   POST: This is when you SUBMIT the information that you filled out in the form
-@app.route("/delete", methods=["GET","POST"]) # Decorator - Now
+@app.route("/index", methods=["GET","POST"]) # Decorator - Now
 
 #   Define what should happen when visiting this page by using a function called delete
 def delete():
@@ -64,7 +64,7 @@ def delete():
 
         # B1) Run a CLASS method called getAllMovies().  Instaniation is not needed.
         mList=Movie.getAllMovies()
-        return render_template('delete.html',message=mList)
+        return render_template('index.html',message=mList)
 
     elif request.method == "POST": # When you fill out the form and click SUBMIT
         # Get the value from the form object called "movtitle" (it is a textbox)
@@ -79,11 +79,11 @@ def delete():
 
         #Return the template index.html but pass it the list of movies
         # stored in the variable mList
-        return render_template('delete.html',message=mList )
+        return render_template('index.html',message=mList )
 
     else:
         # How could it have not been a GET or POST? Hmm. Should have been one of them.
-        return render_template('delete.html',message="Something did not work.")
+        return render_template('index.html',message="Something did not work.")
 
 
 #------------------------------------------------------------------------------------

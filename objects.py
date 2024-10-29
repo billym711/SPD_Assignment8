@@ -51,10 +51,10 @@ class Movie:
     def delMovies_Title_DB(cls, Title):
         #A. Make a connection to the database
         conn = None
-        conn = sqlite3.connect( "movies.db")
+        conn = sqlite3.connect( "birthdays.db")
 
         #B. Write a SQL statement to delete a specific row (based on Title name)
-        sql='DELETE FROM movies WHERE Title=?'
+        sql='DELETE FROM birthdays WHERE Name=?'
 
         # B. Create a workspace (aka Cursor)
         cur = conn.cursor()
