@@ -48,21 +48,13 @@ class Movie:
     # 3. DELETE MOVIE FROM DB by Title
     #######################################################
     @classmethod
-    def delMovies_Title_DB(cls, Title):
+    def index(cls, Title):
         #A. Make a connection to the database
         conn = None
         conn = sqlite3.connect( "birthdays.db")
-
-        #B. Write a SQL statement to delete a specific row (based on Title name)
         sql='DELETE FROM birthdays WHERE Name=?'
-
-        # B. Create a workspace (aka Cursor)
         cur = conn.cursor()
-
-        # C. Run the SQL statement from above and pass it 1 parameter for each ?
         cur.execute(sql, (Title,))
-
-        # D. Save the changes
         conn.commit()
         conn.close()
 

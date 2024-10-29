@@ -68,11 +68,11 @@ def delete():
 
     elif request.method == "POST": # When you fill out the form and click SUBMIT
         # Get the value from the form object called "movtitle" (it is a textbox)
-        movtitle = request.form.get("movtitle", 0)
+        Title = request.form["Title"]
 
         # B1) Run a CLASS method called getAllMovies().  Instaniation is not needed.
         mList=Movie.getAllMovies()
-        Movie.delMovies_Title_DB(movtitle)
+        Movie.index(Title)
 
         # B1) Run a CLASS method called getAllMovies().  Instaniation is not needed.
         mList=Movie.getAllMovies()

@@ -42,7 +42,8 @@
                 </TD>
                 <TD style="padding: 5px; border: solid 1px #777;"><button>Edit</button>
                 </TD>
-                <TD style="padding: 5px; border: solid 1px #777;"><form action="/index" method="post"><input type="submit" name="Delete"></form>
+                <TD style="padding: 5px; border: solid 1px #777;"><form action="/index" method="post"><input type="hidden" name= "Title" value = {{m.Title}}>
+                <button type= "submit" > Delete</button></form>
                 </TD>
             </TR>
         {% endfor %}
