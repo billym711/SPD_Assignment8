@@ -74,7 +74,7 @@ class Movie:
     def saveMovieDB(cls, Title, Year, ImageName):
         #A. Make a connection to the database
         conn = None
-        conn = sqlite3.connect( "movies.db")
+        conn = sqlite3.connect( "birthdays.db")
 
         #B. Write a SQL statement to insert a specific row (based on Title name)
         sql='INSERT INTO movies (Title, YearReleased, ImageName) values (?,?,?)'
